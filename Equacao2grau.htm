@@ -1,0 +1,420 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>EQUAÇÃO DO 2º GRAU</title>
+</head>
+
+<body background="PlanodeFundo.jpg" bgProperties=fixed bgcolor="#DDDDDD">
+<!-- following code added by server. PLEASE REMOVE -->
+<script language="JavaScript" src="http://br.geocities.com/js_source/ygIELib9.js?v3"></script><script language="JavaScript">var yviContents='http://geocities.yahoo.com/themis/as.php?cc=br&s=382045804&l=NE&b=1&t=1255656124';yviR='br';yfiEA(0);</script>
+<!-- preceding code added by server. PLEASE REMOVE -->
+<script language="JavaScript"><!--
+function verfonte()
+
+	{
+	if (event.button==2)
+	{
+	alert('Todos os direitos reservados !!! E os esquerdos também !!!')
+	}
+	}
+
+document.onmousedown=verfonte
+
+
+// --></script><script
+language="JavaScript"><!--
+
+function IsNum(Num)
+{
+  var nums = "0123456789.-";
+  var numlen = Num.length;
+  for (i=0; i<=numlen+1;i++)
+  {
+    if (nums.indexOf(Num.charAt(i))==-1)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+function valida()
+{
+  
+  if (document.formulario.a.value == "")
+  {
+    alert("Digite o valor de    a  ...");
+    formulario.a.focus();
+    return false;
+  }
+  if (!IsNum(document.formulario.a.value))
+  {
+    alert("O valor de    a   não parece válido...");
+    formulario.a.focus();
+    return false;  
+  }
+  if (document.formulario.b.value == "")
+  {
+    alert("Digite o valor de b...");
+    formulario.b.focus();
+    return false;
+  }
+  if (!IsNum(document.formulario.b.value))
+  {
+    alert("O valor de    b   não parece válido...");
+    formulario.b.focus();
+    return false;  
+  }
+  
+	if (document.formulario.c.value == "")
+   {
+    alert("Digite o valor de    c  ...");
+    formulario.c.focus();
+    return false;
+  }
+  if (!IsNum(document.formulario.c.value))
+  {
+    alert("O valor de    c   não parece válido...");
+    formulario.c.focus();
+    return false;  
+  }
+  
+
+a = formulario.a.value;
+
+b = formulario.b.value;
+
+c = formulario.c.value;
+
+
+ formulario.delta.value =  (Math.pow(b,2))-(4*a*c);
+
+d=formulario.delta.value;
+
+ if (d<0)
+	{
+
+ formulario.raiz1.value =  ("Inexistente.");
+
+ formulario.raiz2.value =  ("Inexistente.");
+
+	}
+	else
+
+	{
+ formulario.raiz1.value =  (-b-((Math.pow(d,1/2))*(-1)))/(2*a);
+
+ formulario.raiz2.value =  (-b-Math.pow(d,1/2))/(2*a);
+
+	}
+
+
+
+ return true;
+}
+// --></script>
+
+<form action="./" method="post" name="formulario"
+onsubmit="return valida()">
+    <table border="2" height="288">
+        <tr>
+            <td height="282"><p align="left"><font size="2" face="Verdana"><strong>CÁLCULO
+            DAS RAÍZES DA EQUAÇÃO DO 2º GRAU
+            &nbsp;&nbsp;&nbsp;</strong><em><strong>ax</strong></em><sup><em><strong>2</strong></em></sup><em><strong>
+            + bx + c = 0</strong></em><br>
+              <strong>1</strong>.
+            a = </font><input type="text" size="6" maxlength="6"
+            name="a"> <font size="2" face="Verdana">.<br>
+            <strong>2</strong>. b = </font><font size="3"><input
+            type="text" size="6" maxlength="6" name="b"> </font><font
+            size="2" face="Verdana">.<br>
+            <strong>3</strong>. c = </font><font size="3"><input
+            type="text" size="6" maxlength="6" name="c"> </font><font
+            size="2" face="Verdana">.<br>
+              <br>
+              </font><font size="3"><input type="button"
+            name="calcular" value="Calcular"
+            onclick="javascript:valida()">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+            type="reset" name="limpar" value="Limpar"></font></p>
+            <p align="left"><font size="2" face="Verdana"><strong>Resultados
+            </strong><br>
+            </font><font size="2">DELTA = </font><input
+            type="text" size="6" maxlength="4" name="delta"
+            readonly> : <font size="2">X<sub>1</sub> </font>= <input
+            type="text" size="9" maxlength="4" name="raiz1"
+            readonly><font size="2" face="Verdana"> : X<sub>2</sub>
+            = </font><input type="text" size="9" maxlength="4"
+            name="raiz2" readonly> </p>
+            <p align="center"><font size="2" face="Verdana"><strong><img
+            src="formulaequacao2grau.jpg" align="left" hspace="0"
+            width="141" height="81"></strong></font><font
+            size="2" face="Verdana"><strong><img
+            src="graficoEQUACAO2GRAU.jpg" align="right"
+            hspace="0" width="143" height="105"></strong></font></p>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<p align="center"><b><font size="5">NOTAS DE AULAS</font></b></p>
+
+<b>
+<font color="red" face="Georgia, Arial, Helvetica, Verdana">Equação do segundo grau</font>
+</b>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Uma equação do segundo grau na incógnita x é uma equação do tipo:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+a x<sup>2</sup> + b x + c = 0
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+onde os números reais <b>a</b>, <b>b</b> e <b>c</b> são os coeficientes da
+equação, sendo que <b>a</b> deve ser diferente de zero. Essa equação é também
+chamada de <i>equação quadrática</i>, pois o termo de maior grau está
+elevado ao quadrado.
+</font>
+
+<font face="Georgia, Arial, Helvetica, Verdana" color="black" size="4">
+<p><a name="m111a01"></a></font><b><font color="red" face="Georgia, Arial, Helvetica, Verdana">Introdução às equações algébricas</font>
+</b>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Equações algébricas são equações nas quais a incógnita x está sujeita
+a operações algébricas como: adição, subtração, multiplicação, divisão
+e radiciação.
+</font>
+
+<p><b><font color="#006600" face="Georgia, Arial, Helvetica, Verdana">Exemplos</font></b><font face="Georgia, Arial, Helvetica, Verdana" color="black">:</font>
+<ul type="square">
+  <li>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+a x + b = 0
+</font>
+
+  <li>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+a x<sup>2</sup> + bx + c = 0
+</font>
+
+  <li>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+a x<sup>4</sup> + b x<sup>2</sup> + c = 0
+</font>
+
+  </li>
+</ul>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Uma equação algébrica está em sua forma canônica, quando ela está
+escrita na forma:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+a<sub>o</sub> x<sup>n</sup> + a<sub>1</sub> x<sup>n-1</sup> + ... + a<sub>n-1</sub>
+x<sup>1</sup> + a<sub>n</sub> = 0
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+onde n é um número inteiro positivo (número natural). O maior expoente da
+incógnita em uma equação algébrica é denominado o grau da equação e o
+coeficiente do termo de mais alto grau é denominado coeficiente do termo
+dominante.
+</font>
+
+<p><b><font color="#006600" face="Georgia, Arial, Helvetica, Verdana">Exemplo</font></b><font face="Georgia, Arial, Helvetica, Verdana" color="black">: A equação:</font>
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+4 x<sup>2</sup> + 3x + 2 = 0
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+tem o grau 2 e o coeficiente do termo dominante é 4. Neste caso, dizemos que
+esta é uma equação do segundo grau.
+</font>
+
+<p>
+&nbsp;
+<font face="Georgia, Arial, Helvetica, Verdana" color="black" size="4">
+<hr noShade>
+</font>
+
+<b>
+<font color="red" face="Georgia, Arial, Helvetica, Verdana">A fórmula quadrática de Sridhara (Bhaskara)</font>
+</b>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Mostraremos na sequência como o matemático Sridhara, obteve a Fórmula
+(conhecida como sendo) de Bhaskara, que é a fórmula geral para a resolução
+de equações do segundo grau. Um fato curioso é que a Fórmula de Bhaskara não
+foi descoberta por ele mas pelo matemático hindu <b>Sridhara</b>, pelo menos um
+século antes da publicação de Bhaskara, fato reconhecido pelo próprio
+Bhaskara, embora o material construído pelo pioneiro não tenha chegado até nós.
+</font>
+
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+O fundamento usado para obter esta fórmula foi buscar uma forma de reduzir a
+equação do segundo grau a uma do primeiro grau, através da extração de raízes
+quadradas de ambos os membros da mesma.
+</font>
+
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Seja a equação:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+a x<sup>2</sup> + b x + c = 0
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+com a não nulo e dividindo todos os coeficientes por a, temos:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+x<sup>2</sup> + (b/a) x + c/a = 0
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Passando o termo constante para o segundo membro, teremos:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+x<sup>2</sup> + (b/a) x = -c/a
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Prosseguindo, faremos com que o lado esquerdo da equação seja um quadrado
+perfeito e para isto somaremos o <i>quadrado de b/2a</i> a ambos os membros da
+equação para obter:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+x<sup>2</sup> + (b/a) x + (b/2a)<sup>2</sup> = -c/a + (b/2a)<sup>2</sup>
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Simplificando ambos os lados da equação, obteremos:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+[x+(b/2a)]<sup>2 </sup>= (b<sup>2</sup> - 4ac) / 4a<sup>2</sup>
+</font>
+
+</center>
+<center>
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Extraindo a raiz quadrada de cada membro da equação e lembrando que a raiz
+quadrada de todo número real não negativo é também não negativa, obteremos
+duas respostas para a nossa equação:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+x + (b/2a) = + R[(b<sup>2</sup>-4ac) / 4a<sup>2</sup>]</center>ou
+seja <center>x + (b/2a) = - R[(b<sup>2</sup>-4ac) / 4a<sup>2</sup>]
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+que alguns, por <i>preguiça</i> ou <i>descuido</i>, escrevem:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+<img src="bhaskara.gif" width="214" height="71">
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+contendo um sinal <b>±</b> que é lido como <i>mais ou menos</i>. Lembramos
+que este sinal <b>±</b> não tem qualquer significado em Matemática.
+</font>
+
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+Como estamos procurando duas raízes para a equação do segundo grau,
+deveremos sempre escrever:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+x' = -b/2a + R[b<sup>2</sup>-4ac] /2a<br>
+x&quot; = -b/2a - R[b<sup>2</sup>-4ac] /2a
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+A fórmula de Bhaskara ainda pode ser escrita como:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+<img src="baskara.gif" width="132" height="60">
+</font>
+
+</center>
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+onde <i>D</i> (às vezes se usa também a letra maiúscula &quot;delta&quot;
+do alfabeto grego) é o discriminante da equação do segundo grau, definido
+por:
+</font>
+
+<p><center>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black">
+D = b<sup>2</sup> - 4ac
+</font>
+
+</center>
+
+<p>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black" size="4">
+Confira o restante no site&nbsp; </font><a href="http://pessoal.sercomtel.com.br/matematica/fundam/111/mod111a.htm">http://pessoal.sercomtel.com.br/matematica/fundam/111/mod111a.htm</a>
+<font face="Georgia, Arial, Helvetica, Verdana" color="black" size="4">
+</font>
+
+<p>&nbsp;
+
+<p><img src="http://visit.geocities.com/counter.gif"
+alt="Counter" width="100" height="30"></p>
+<img src="http://visit.webhosting.yahoo.com/visit.gif?br1047667151" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=382045804&t=1047667151" ALT=1 WIDTH=1 HEIGHT=1>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --></noscript></script>
+<script language="JavaScript" src="http://geocities.yahoo.com.br/js_source/ygIELib9.js?v3"></script><script language="JavaScript">var yviContents='http://br.toto.geo.yahoo.com/toto?s=382045804&l=NE&b=1&t=1047667151';yviR='br';yfiEA(0);</script><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://geocities.com/js_source/geov2.js"></script><script language="javascript">geovisit();</script><noscript><!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?br1255656124" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=382045804&t=1255656124&f=br-w1" ALT=1 WIDTH=1 HEIGHT=1>
