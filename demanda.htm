@@ -1,0 +1,186 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>CÁLCULO DA DEMANDA DE CONSUMO EM l/s</title>
+</head>
+
+<body background="PlanodeFundo.jpg" bgcolor="#DDDDDD">
+<!-- following code added by server. PLEASE REMOVE -->
+<script language="JavaScript" src="http://br.geocities.com/js_source/ygIELib9.js?v3"></script><script language="JavaScript">var yviContents='http://geocities.yahoo.com/themis/as.php?cc=br&s=382045804&l=NE&b=1&t=1255656291';yviR='br';yfiEA(0);</script>
+<!-- preceding code added by server. PLEASE REMOVE -->
+<script language="JavaScript"><!--
+function verfonte()
+
+	{
+	if (event.button==2)
+	{
+	alert('Todos os direitos reservados !!! E os esquerdos também !!!')
+	}
+	}
+
+document.onmousedown=verfonte
+
+
+// --></script><script>
+function IsNum(Num)
+{
+  var nums = "0123456789.";
+  var numlen = Num.length;
+  for (i=0; i<=numlen+1;i++)
+  {
+    if (nums.indexOf(Num.charAt(i))==-1)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+
+function IsNum2(Num)
+{
+  var nums = "0123456789";
+  var numlen = Num.length;
+  for (i=0; i<=numlen+1;i++)
+  {
+    if (nums.indexOf(Num.charAt(i))==-1)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+function valida()
+{
+  
+  
+	if (document.formulario.habitantes.value == "")
+  {
+    alert("Digite o número de habitantes...");
+    formulario.habitantes.focus();
+    return false;
+  }
+  if (!IsNum2(document.formulario.habitantes.value))
+  {
+    alert("O o número de habitantes não parece válido...");
+    formulario.habitantes.focus();
+    return false;  
+  }
+  if (document.formulario.percapita.value == "")
+  {
+    alert("Digite o valor da Per Capta (em litros)...");
+    formulario.diametro.focus();
+    return false;
+  }
+  if (!IsNum(document.formulario.percapita.value))
+  {
+    alert("O valor da Per Capta não parece válido...");
+    formulario.percapita.focus();
+    return false;  
+  }
+  
+
+	if (document.formulario.coeficiente1.value == "")
+  {
+    alert("Digite o valor de K1 ...");
+    formulario.coeficiente1.focus();
+    return false;
+  }
+  if (!IsNum(document.formulario.coeficiente1.value))
+  {
+    alert("O valor de  K1  não parece válido...");
+    formulario.coeficiente1.focus();
+    return false;  
+  }
+
+	if (document.formulario.coeficiente2.value == "")
+  {
+    alert("Digite o valor de K2 ...");
+    formulario.coeficiente2.focus();
+    return false;
+  }
+  if (!IsNum(document.formulario.coeficiente2.value))
+  {
+    alert("O valor de  K2  não parece válido...");
+    formulario.coeficiente2.focus();
+    return false;  
+  }
+
+n=formulario.habitantes.value;
+
+p=formulario.percapita.value;
+
+k1=formulario.coeficiente1.value;
+
+k2=formulario.coeficiente2.value;
+
+ formulario.vazao.value =  (n*p*k1*k2/86400);
+ 
+ 
+  return true;
+}
+
+</script>
+
+<form action="./" method="post" name="formulario"
+onsubmit="return valida()">
+    <table border="2" width="70%">
+        <tr>
+            <td><p align="center"><font size="2" face="Verdana"><strong>HIDRÁULICA</strong><br>
+            <strong>CÁLCULO DA VAZÃO NECESSÁRIA</strong><br>
+            <strong>AO ABASTECIMENTO DE UMA REGIÃO</strong></font></p>
+            <p align="left"><font size="2" face="Verdana"><br>
+            Entre com os valores :<br>
+            <br>
+            <strong>1</strong>. &nbsp;N&nbsp; =</font><font
+            size="1" face="Verdana">&nbsp;&nbsp;</font><input
+            type="text" size="6" maxlength="6" name="habitantes">
+            <font size="2" face="Verdana">. Número de habitantes<br>
+            <strong>2</strong>. &nbsp;P&nbsp; =&nbsp;</font><font
+            size="1" face="Verdana">&nbsp;</font><input
+            type="text" size="6" maxlength="6" name="percapita"> <font
+            size="2" face="Verdana">. Vazão &quot;Per
+            Capta&quot; em <em>l/hab/dia</em><br>
+            <strong>3</strong>. &nbsp;K<sub>1</sub>&nbsp;=</font><font
+            size="1" face="Verdana"> &nbsp;</font><input
+            type="text" size="6" maxlength="6"
+            name="coeficiente1"> <font size="2" face="Verdana">. <br>
+            <strong>4</strong>. &nbsp;K<sub>2</sub> =</font><font
+            size="1" face="Verdana">&nbsp;&nbsp;</font><input
+            type="text" size="6" maxlength="6"
+            name="coeficiente2"> <font size="2" face="Verdana">.
+            Coeficientes de demanda máxima horária e diária<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(
+            Normalmente 1.2 e 1.5 respectivamente )</font></p>
+            <p align="left"><font size="3"><input type="button"
+            name="calcular" value="Calcular"
+            onclick="javascript:valida()">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </font><font
+            size="2" face="Verdana">&nbsp;&nbsp;&nbsp;</font><font
+            size="3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<input
+            type="reset" name="limpar" value="Limpar"></font><br>
+            <font size="2" face="Verdana"><strong>&nbsp;</strong></font><br>
+            <font size="2" face="Verdana"><strong>Resultado</strong></font><br>
+            <font size="2" face="Verdana"><strong>&nbsp;</strong></font><br>
+            <font size="2" face="Verdana"><em><strong>&nbsp;</strong></em><strong>&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VAZÃO
+            = </strong></font><input type="text" size="6"
+            maxlength="4" name="vazao" readonly><font size="2"
+            face="Verdana"> <em><strong>l/s &nbsp;</strong></em><strong>&nbsp;&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;<img
+            src="formulaDEMANDA.jpg" width="149" height="45"></strong></font></p>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<p><img src="http://visit.geocities.com/counter.gif"
+alt="Counter"></p>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?br1255656291" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=382045804&t=1255656291&f=br-w5" ALT=1 WIDTH=1 HEIGHT=1>
