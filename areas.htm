@@ -1,0 +1,179 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>ÁREAS DE POLÍGONOS</title>
+</head>
+
+<body background="PlanodeFundo.jpg" bgcolor="#DDDDDD">
+<!-- following code added by server. PLEASE REMOVE -->
+<script language="JavaScript" src="http://br.geocities.com/js_source/ygIELib9.js?v3"></script><script language="JavaScript">var yviContents='http://geocities.yahoo.com/themis/as.php?cc=br&s=382045804&l=NE&b=1&t=1255656257';yviR='br';yfiEA(0);</script>
+<!-- preceding code added by server. PLEASE REMOVE -->
+<script language="JavaScript"><!--
+function verfonte()
+
+	{
+	if (event.button==2)
+	{
+	alert('Todos os direitos reservados !!! E os esquerdos também !!!')
+	}
+	}
+
+document.onmousedown=verfonte
+
+
+// --></script><script
+language="JavaScript"><!--
+
+function IsNum(Num)
+{
+  var nums = "0123456789.";
+  var numlen = Num.length;
+  for (i=0; i<=numlen+1;i++)
+  {
+    if (nums.indexOf(Num.charAt(i))==-1)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+
+function IsNum2(Num)
+{
+  var nums = "0123456789";
+  var numlen = Num.length;
+  for (i=0; i<=numlen+1;i++)
+  {
+    if (nums.indexOf(Num.charAt(i))==-1)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+
+function valida()
+{
+
+    
+  if (!IsNum(document.formulario.lado.value))
+  {
+    alert("Não parece ser um valor válido...");
+    formulario.lado.focus();
+    return false;  
+  }
+  if (document.formulario.lado.value == "0")
+  {
+    alert("O lado deve ser diferente de zero !!! ");
+    formulario.lado.focus();
+    return false;
+  }
+
+  
+  if (!IsNum2(document.formulario.nlados.value))
+  {
+    alert("Valor inteiro para o número de lados ...");
+    formulario.nlados.focus();
+    return false;  
+  }
+  
+  if (!IsNum(document.formulario.tlado.value))
+  {
+    alert("Não parece ser um valor válido...");
+    formulario.tlado.focus();
+    return false;  
+  }
+	  
+  if (!IsNum(document.formulario.lado.value))
+  {
+    alert("Não parece ser um valor válido...");
+    formulario.lado.focus();
+    return false;  
+  }
+
+
+	b=formulario.nlados.value;
+
+	g=360/(2*b);
+	
+	r=2*3.1415*g/360;
+
+	c=formulario.tlado.value;
+
+	formulario.ageral.value =  b*c*c/(4*Math.tan(r));
+		
+
+	l=formulario.lado.value;
+
+
+ formulario.triangulo.value =  Math.pow(l,2)*Math.pow(3,0.5)/4;
+ 
+ formulario.quadrado.value =  Math.pow(l,2);
+ 
+ formulario.pentagono.value =  Math.pow(l,2)*1.7205;
+ 
+ formulario.hexagono.value =  Math.pow(l,2)*2.5981;
+
+ formulario.octogono.value =  Math.pow(l,2)*4.8284;
+
+  return true;
+}
+// --></script>
+
+<form action="./" method="post" name="formulario"
+onsubmit="return valida()">
+    <p align="left">&nbsp;</p>
+    <p align="left"><font size="2" face="Verdana"><strong>ÁREAS
+    DE POLÍGONOS REGULARES</strong></font></p>
+    <p align="left"><font size="2" face="Verdana"><strong>1</strong>.
+    DIGITE O TAMANHO DO LADO DO POLÍGONO : </font><input
+    type="text" size="6" maxlength="6" name="lado"> <font
+    size="2" face="Verdana">.<br>
+    </font></p>
+    <p align="left"><font size="3"><input type="button"
+    name="calcular" value="Calcular"
+    onclick="javascript:valida()">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+    type="reset" name="limpar" value="Limpar"></font></p>
+    <p align="left"><font size="2" face="Verdana"><strong>Resultados<br>
+    </strong></font></p>
+    <p align="left"><font size="2"><img src="figuratriangulo.jpg"
+    width="74" height="58">&nbsp;</font>=<input type="text"
+    size="6" maxlength="4" name="triangulo" readonly><font
+    size="2" face="Verdana"> </font>&nbsp;&nbsp;<font size="2"
+    face="Verdana"><img src="figuraquadrado.jpg" width="78"
+    height="61">=</font><input type="text" size="6" maxlength="4"
+    name="quadrado" readonly> &nbsp;&nbsp;<img
+    src="figurapentagono.jpg" width="76" height="59">=<input
+    type="text" size="6" maxlength="4" name="pentagono" readonly>
+    &nbsp;&nbsp;<img src="figurahexagono.jpg" width="72"
+    height="59">=<input type="text" size="6" maxlength="4"
+    name="hexagono" readonly> &nbsp;&nbsp;<img
+    src="figuraoctagono.jpg" width="65" height="56"> = <input
+    type="text" size="5" maxlength="4" name="octogono" readonly></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><font size="2" face="Verdana"><strong>SEU
+    POLÍGONO NÃO ESTÁ AQUI? ENTÃO, DIGITE O SEU NÚMERO DE
+    LADOS E O TAMANHO :</strong></font></p>
+    <p align="left"><font size="2" face="Verdana">NÚMERO DE
+    LADOS = </font><input type="text" size="6" maxlength="6"
+    name="nlados"> ; &nbsp;&nbsp;&nbsp;<font size="2"
+    face="Verdana">TAMANHO DO LADO = </font><input type="text"
+    size="6" maxlength="6" name="tlado"> ;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font
+    size="2" face="Verdana"><strong>ÁREA</strong> : </font><input
+    type="text" size="6" maxlength="6" name="ageral"></p>
+    <p align="left">&nbsp;</p>
+</form>
+
+<p><img src="http://visit.geocities.com/counter.gif"
+alt="Counter" width="100" height="30"></p>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?br1255656257" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=382045804&t=1255656257&f=br-w8" ALT=1 WIDTH=1 HEIGHT=1>
