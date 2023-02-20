@@ -1,0 +1,326 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>CÁLCULO DA VAZÃO</title>
+</head>
+
+<body background="PlanodeFundo.jpg" bgcolor="#DDDDDD">
+<!-- following code added by server. PLEASE REMOVE -->
+<script language="JavaScript" src="http://br.geocities.com/js_source/ygIELib9.js?v3"></script><script language="JavaScript">var yviContents='http://geocities.yahoo.com/themis/as.php?cc=br&s=382045804&l=NE&b=1&t=1255656288';yviR='br';yfiEA(0);</script>
+<!-- preceding code added by server. PLEASE REMOVE -->
+<script language="JavaScript"><!--
+function verfonte()
+
+	{
+	if (event.button==2)
+	{
+	alert('Todos os direitos reservados !!! E os esquerdos também !!!')
+	}
+	}
+
+document.onmousedown=verfonte
+
+
+// --></script><script>
+function IsNum(Num)
+{
+  var nums = "0123456789.-";
+  var numlen = Num.length;
+  for (i=0; i<=numlen+1;i++)
+  {
+    if (nums.indexOf(Num.charAt(i))==-1)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+function IsNum2(Num)
+{
+  var nums = "0123456789.";
+  var numlen = Num.length;
+  for (i=0; i<=numlen+1;i++)
+  {
+    if (nums.indexOf(Num.charAt(i))==-1)
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+function valida()
+{
+  
+  
+	if (document.formulario.cargaAB.value == "")
+	{
+    alert("Digite o valor de da carga no vão AB  ...");
+    formulario.cargaAB.focus();
+    return false;
+  }
+  
+ if (document.formulario.cargaAB.value == 0)
+	{
+    alert("O valor da carga deve ser diferente de zero...");
+    formulario.cargaAB.focus();
+    return false;
+  }
+
+if (!IsNum(document.formulario.cargaAB.value))
+  {
+    alert("O valor da carga no vão AB não parece válido...");
+    formulario.cargaAB.focus();
+    return false;  
+  }
+  
+
+if (document.formulario.cargaBC.value == "")
+	{
+    alert("Digite o valor de da carga no vão BC  ...");
+    formulario.cargaBC.focus();
+    return false;
+  }
+
+ if (document.formulario.cargaBC.value == 0)
+	{
+    alert("O valor da carga deve ser diferente de zero...");
+    formulario.cargaBC.focus();
+    return false;
+  }
+
+  if (!IsNum(document.formulario.cargaBC.value))
+  {
+    alert("O valor da carga no vão BC não parece válido...");
+    formulario.cargaBC.focus();
+    return false;  
+  }
+
+
+if (document.formulario.vaoAB.value == "")
+	{
+    alert("Digite o comprimento do vão AB  ...");
+    formulario.vaoAB.focus();
+    return false;
+  }
+  if (!IsNum2(document.formulario.vaoAB.value))
+  {
+    alert("O valor do comprimento do vão AB não parece válido...");
+    formulario.vaoAB.focus();
+    return false;  
+  }
+
+ if (document.formulario.vaoAB.value == 0)
+	{
+    alert("O valor do comprimento ser diferente de zero...");
+    formulario.vaoAB.focus();
+    return false;
+  }
+
+if (document.formulario.vaoBC.value == "")
+	{
+    alert("Digite o comprimento do vão BC  ...");
+    formulario.vaoBC.focus();
+    return false;
+  }
+  if (!IsNum2(document.formulario.vaoBC.value))
+  {
+    alert("O valor do comprimento do vão BC não parece válido...");
+    formulario.vaoBC.focus();
+    return false;  
+  }
+
+ if (document.formulario.vaoBC.value == 0)
+	{
+    alert("O valor do comprimento deve ser diferente de zero...");
+    formulario.vaoBC.focus();
+    return false;
+  }
+
+
+Qab=formulario.cargaAB.value;
+
+Qbc=formulario.cargaBC.value;
+
+Lab=formulario.vaoAB.value;
+
+Lbc=formulario.vaoBC.value;
+
+Dab=(1/Lab)/((1/Lab)+(1/Lbc));
+
+Dbc=1-Dab;
+
+Mab=(Qab*Lab*Lab)/8;
+
+Mbc=-(Qbc*Lbc*Lbc)/8;
+
+Eq=Mab+Mbc;
+
+Mf=-(Eq*Dab)+Mab;
+
+Ra=(Qab*Lab/2)-(Mf/Lab);
+
+Rbe=(Qab*Lab/2)+(Mf/Lab);
+
+Rbd=(Qbc*Lbc/2)+(Mf/Lbc);
+
+Rb=Rbe+Rbd;
+
+Rc=(Qbc*Lbc/2)-(Mf/Lbc);
+
+MmaxAB=(Qab*Lab*Lab/8)-(Mf/2)+(Mf*Mf/(2*Qab*Lab*Lab));
+
+MmaxBC=(Qbc*Lbc*Lbc/8)-(Mf/2)+(Mf*Mf/(2*Qbc*Lbc*Lbc));
+
+
+XmaxAB=(Lab/2)-(Mf/(Qab*Lab));
+
+XmaxBC=(Lbc/2)-(Mf/(Qbc*Lbc));
+
+XnuloAB=2*Mf/(Lab*Qab);
+
+XnuloBC=2*Mf/(Lbc*Qbc);
+
+
+ formulario.momentonegativo.value =  Mf;
+
+ formulario.reacaoA.value =  Ra;
+
+ formulario.reacaoB.value =  Rb;
+
+ formulario.reacaoC.value =  Rc;
+ 
+ formulario.momentoAB.value =  MmaxAB;
+
+ formulario.momentoBC.value =  MmaxBC;
+ 
+ formulario.xmaxAB.value =  XmaxAB;
+
+ formulario.xmaxBC.value =  XmaxBC;
+
+ formulario.xnuloAB.value =  XnuloAB;
+
+ formulario.xnuloBC.value =  XnuloBC;
+
+
+  return true;
+}
+</script>
+
+<form action="./" method="post" name="formulario"
+onsubmit="return valida()">
+    <table border="2" width="95%">
+        <tr>
+            <td><p align="center"><font size="2" face="Verdana"><strong>CONCRETO</strong>
+            - <strong>MÉTODO DE CROSS</strong><br>
+            <strong>VIGA C/ 2 VÃOS, 1 ENGASTE</strong><br>
+            <br>
+            Entre com os valores de acordo com a figura :<br>
+            <br>
+            </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+            type="text" size="5" maxlength="6" name="cargaAB">&nbsp;<font
+            size="2" face="Verdana">Tf</font>&nbsp;/<font
+            size="2" face="Verdana">m</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+            type="text" size="5" maxlength="6" name="cargaBC"><font
+            size="2" face="Verdana"> Tf /m<br>
+            <img src="viga2vaos.jpg" width="438" height="93"><br>
+            </font>&nbsp; &nbsp;&nbsp;<input type="text" size="5"
+            maxlength="6" name="vaoAB"> <font size="2"
+            face="Verdana">m</font>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input
+            type="text" size="5" maxlength="6" name="vaoBC"> <font
+            size="2" face="Verdana">m</font></p>
+            <p align="center"><font size="3"><input type="button"
+            name="calcular1" value="Calcular"
+            onclick="javascript:valida()">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; </font><font size="2"
+            face="Verdana">&nbsp;&nbsp;&nbsp;</font><font
+            size="3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<input
+            type="reset" name="limpar1" value="Limpar"></font><br>
+            <font size="2" face="Verdana"><strong>&nbsp;Resultado</strong></font><br>
+            <font size="2" face="Verdana"><strong>&nbsp;</strong></font><br>
+            <font size="2" face="Verdana"><strong><img
+            src="momentos2vaos.jpg" width="456" height="121">&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;</strong><em><strong>&nbsp;</strong></em><strong>&nbsp;&nbsp;</strong></font></p>
+            </td>
+        </tr>
+        <tr>
+            <td><p align="center"><font size="2" face="Verdana"><br>
+            <strong>1</strong></font><font size="1"
+            face="Verdana">.&nbsp;</font><font size="2"
+            face="Verdana"><strong>R</strong><sub><strong>A</strong></sub></font><font
+            size="1" face="Verdana">=</font><font size="2"><input
+            type="text" size="5" maxlength="6" name="reacaoA"></font><font
+            size="1" face="Verdana"><em><strong>Tf</strong></em>
+            Reação do apoio A. <em><strong>&nbsp;</strong></em><strong>&nbsp;&nbsp;</strong></font><font
+            size="2" face="Verdana"><strong>R</strong><sub><strong>B</strong></sub></font><font
+            size="1" face="Verdana">= </font><font size="2"><input
+            type="text" size="5" maxlength="6" name="reacaoB"></font><font
+            size="1" face="Verdana"><em><strong>Tf</strong></em>
+            Reação do apoio B<em> </em><strong>&nbsp;&nbsp;</strong></font><font
+            size="2" face="Verdana"><strong>R</strong><sub><strong>C</strong></sub></font><font
+            size="1" face="Verdana">= </font><font size="2"><input
+            type="text" size="5" maxlength="6" name="reacaoC"></font><font
+            size="1" face="Verdana"><em><strong>Tf </strong></em>Reação
+            do apoio C<br>
+            <strong>2</strong>. &nbsp;</font><font size="2"
+            face="Verdana"><strong>M</strong></font><font
+            size="1" face="Verdana"><sub>MÁX</sub> (+)= </font><font
+            size="2"><input type="text" size="5" maxlength="6"
+            name="momentoAB"></font><font size="1" face="Verdana"><em><strong>Tf.m
+            </strong></em>Momento máx no vão AB
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font
+            size="2" face="Verdana"><strong>M</strong></font><font
+            size="1" face="Verdana"><sub>MÁX</sub> (+)= </font><font
+            size="2"><input type="text" size="5" maxlength="6"
+            name="momentoBC"></font><font size="1" face="Verdana"><em><strong>Tf.m
+            </strong></em>Momento máx no vão BC<br>
+            <strong>3</strong>. &nbsp;</font><font size="2"
+            face="Verdana"><strong>x</strong></font><font
+            size="1" face="Verdana"><sub>MÁX</sub> = </font><font
+            size="2"><input type="text" size="5" maxlength="6"
+            name="xmaxAB"></font><font size="1" face="Verdana"><em><strong>m
+            </strong></em>x do momento máx no vão AB &nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font
+            size="2" face="Verdana"><strong>x</strong></font><font
+            size="1" face="Verdana"><sub>MÁX</sub> = </font><font
+            size="2"><input type="text" size="5" maxlength="6"
+            name="xmaxBC"></font><font size="1" face="Verdana"><em><strong>m
+            </strong></em>x do momento máx no vão BC<br>
+            <strong>4</strong>. &nbsp;</font><font size="2"
+            face="Verdana"><strong>X</strong></font><font
+            size="1" face="Verdana"><strong>&nbsp;</strong>(-)
+            =&nbsp;&nbsp;</font><font size="2"><input type="text"
+            size="6" maxlength="6" name="momentonegativo"></font><font
+            size="1" face="Verdana">.Momento negativo <em><strong>Tf.m</strong></em>
+            </font><font size="2" face="Verdana"><br>
+            </font><font size="1" face="Verdana"><strong>5</strong>.
+            &nbsp;</font><font size="2" face="Verdana"><strong>x</strong></font><font
+            size="1" face="Verdana"><sub>M=0</sub> = </font><font
+            size="2"><input type="text" size="5" maxlength="6"
+            name="xnuloAB"></font><font size="1" face="Verdana"><em><strong>m
+            </strong></em>x do momento nulo no vão AB &nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font
+            size="2" face="Verdana"><strong>x</strong></font><font
+            size="1" face="Verdana"><sub>M=0</sub> = </font><font
+            size="2"><input type="text" size="5" maxlength="6"
+            name="xnuloBC"></font><font size="1" face="Verdana"><em><strong>m
+            </strong></em>x do momento nulo no vão BC</font></p>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<p><img src="http://visit.geocities.com/counter.gif"
+alt="Counter"></p>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?br1255656288" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=382045804&t=1255656288&f=br-w5" ALT=1 WIDTH=1 HEIGHT=1>
